@@ -64,6 +64,16 @@ If the speed limit is **100 km/h**, the program identifies the vehicle as speedi
 - Tesseract OCR
 - HTML
 
+## Example Output
+
+When a vehicle is detected travelling above the selected speed limit, the program can write the result to `tickets.txt`.
+
+Example:
+
+`ABC123,150.0`
+
+This means the vehicle with plate `ABC123` was calculated to be travelling at approximately **150 km/h**.
+
 ## Status
 
 **Completed**
