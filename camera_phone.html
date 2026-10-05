@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Speed Camera</h2>
+<input type="text" id="cam" placeholder="Enter C1 or C2">
+<br><br>
+<input type="file" id="img" accept="image/*" capture="camera">
+<br><br>
+<button onclick="send()">Send Photo</button>
+<p id="result"></p>
+<script>
+function send() {
+    let form = new FormData()
+    form.append('cam_id', document.getElementById('cam').value)
+    form.append('image', document.getElementById('img').files[0])
+    fetch('http://YOUR_LAPTOP_IP:5000/capture', {method:'POST', body:form})
+    .then(r => r.json())
+    .then(d => document.getElementById('result').innerText = JSON.stringify(d))
+}
+</script>
+</body>
+</html>
